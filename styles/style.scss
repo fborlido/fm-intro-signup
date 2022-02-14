@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+$Red: hsl(0, 100%, 74%);
+$Green: hsl(154, 59%, 51%);
+$Blue: hsl(248, 32%, 49%);
+$DarkBlue: hsl(249, 10%, 26%);
+$GrayishBlue: hsl(246, 25%, 77%);
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  background-color: $Red;
+  background-image: url("../images/bg-intro-mobile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: clamp(2em, 5vh, 3em);
+  line-height: 1.2em;
+  margin-bottom: 0.7em;
+}
+
+main {
+  padding: 5em 1.5em;
+  min-height: 100vh;
+  max-width: 70rem;
+  margin: auto;
+}
+
+.left {
+  margin-bottom: 3em;
+}
+
+.banner {
+  background-color: $Blue;
+  padding: 1em 3em;
+  border-radius: 0.5em;
+  margin: 1em 0;
+  box-shadow: 0 5px 0px 0 rgba($DarkBlue, 0.3);
+
+  p {
+    line-height: 1.5em;
+
+    span {
+      font-weight: 600;
+    }
+  }
+}
+
+form {
+  background-color: white;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 5px 2px 0 rgba($DarkBlue, 0.3);
+
+  .field {
+    margin: 1em 0;
+
+    input {
+      min-width: 100%;
+      padding: 1.2em;
+      border-radius: 0.5em;
+      border: 1px solid $GrayishBlue;
+
+      &::placeholder {
+        font-weight: 600;
+        color: $DarkBlue;
+        font-family: inherit;
+      }
+    }
+
+    .error-text {
+      display: none;
+    }
+  }
+
+  .error {
+    position: relative;
+    
+    input {
+      border: 2px solid $Red;
+      background-image: url('../images/icon-error.svg');
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+    }
+
+    .error-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .error-text {
+      display: block;
+      color: $Red;
+      text-align: right;
+      font-size: 0.7em;
+      font-style: italic;
+      margin-top: 0.5em;
+    }
+  }
+
+  button {
+    background-color: $Green;
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 0.6em 0;
+    margin: 0.5em 0;
+    border-radius: 0.5em;
+    box-shadow: 0 3px 2px 0 rgba($DarkBlue, 0.3);
+    transition: opacity 200ms linear;
+
+    &:hover {
+      opacity: 0.6;
+      cursor: pointer;
+    }
+  }
+
+  .info {
+    color: $GrayishBlue;
+    font-size: 0.7em;
+    margin: 1em 2em;
+
+    a {
+      color: $Red;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    background-image: url("../images/bg-intro-desktop.png");
+  }
+
+  main {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    align-items: center;
+  }
+  .left {
+    margin-bottom: 0;
+    text-align: left;
+    flex: 1;
+  }
+  .right {
+    flex: 1;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
